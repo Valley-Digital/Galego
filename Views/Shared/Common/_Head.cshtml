@@ -1,0 +1,191 @@
+﻿@{
+  string _classSearch = Session["idEventList"] == null ? "search" : "filterListEventsProducts";
+  string _classMiniCart = Session["idEventList"] == null && Session["EventList"] == null ? "mini-cart" : "mini-cart-list-event";
+}
+<div class="ui container fluid _header">
+    <div class="ui container">
+        <div class="ui middle aligned four column centered grid">
+            <div class="row">
+
+                <div class="ui column logo-box mobile">                     
+                    <div class="menu-mobile">
+                        <div class="item search hamb ">                         
+                            <div class="wsmobileheader clearfix">
+                                <a class="wsnavtoggle animated-arrow"><span></span></a>
+                            </div>  
+                        </div>
+                        <a href="/Home" title="Página Inicial" class="logoHeader">
+                            <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                        </a>
+                    </div>              
+                </div>
+
+                <div class="ui column logo-box desktop">
+                    <div class="wsmobileheader clearfix">
+                        <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+                    </div>
+                    <div class="searchNoMobile">
+                        <div class="item search">
+                            <div class="ui searchMobile">                                
+                                <div class="ui button icon centered">                                
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/" title="Página Inicial">
+                        <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                    </a>
+                </div>
+
+                <div class="ui column menu-box">
+                     <div class="item search Desktop">
+                            <div class="ui category @_classSearch">
+                                    <div class="ui input fluid">
+                                       
+                                    <input class="prompt" type="text" placeholder="O que você está buscando?">
+                                     <i class="search icon"></i>
+                                    </div>
+                                    <div class="results"></div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="ui column aside-box">
+                    <div class="ui horizontal list relaxed">
+                       
+                        <div class="item search desktop">
+                            <div class="ui searchMobile">                                
+                                <div class="ui button icon centered">
+                                    <i class="search icon"></i>
+                                
+                                </div>
+                        
+                            </div>
+                           
+                        </div>
+                      
+                        @* <div class="item contact DesktopOnly">
+                            <a  >
+                                <i class="icon regular"></i> 
+                                 <span><b>Contato</b><br>0800-602-1901</span>                                  
+                            </a>                                                        
+                        </div> *@
+
+                        <div class="item pointer DesktopOnly">
+                            <a href="/Customer/WishList" >
+                                <i class="icon regular"></i> 
+                                <span>Meus<br><b>Favoritos</b></span>                              
+                            </a>                                                        
+                        </div>
+
+                   
+                        <div class="item user ">
+                            @if ((Session["UserAuthenticated"] == null || (Convert.ToBoolean(Session["Guest"]) == true)) && Session["Seller"] == null)
+                            {
+                                <a href="/customer" class="naoLogado">
+                                    <i class="user icon regular"></i>  
+                                     <span>Entrar<br><b>Minha Conta</b></span>                                    
+                                </a>
+                                <div class="menu">
+                                    <ul>
+                                      <li><a href="/customer" class="button-login">Entrar</a></li>
+                                      <li><a href="/Customer/AccessKey">Não tem Cadastro? <b>Criar conta</b></a></li>                                      
+                                    </ul>
+                                    @* <a href="/customer" class="item" title="Minha Conta"><i class="options icon"></i>Minha Conta</a>
+                                    <a href="/order" class="item" title="Meus Pedidos"><i class="shopping bag icon"></i>Meus Pedidos</a> *@
+                                </div>
+                            }
+                            @if ((Session["UserAuthenticated"] != null) && (Convert.ToBoolean(Session["Guest"]) == false))
+                            {
+                                var userAuthenticated = (DomainCustomer.Entities.Customer)Session["UserAuthenticated"];
+
+                                Char delimiter = ' ';
+                                String[] nickName = userAuthenticated.Name.Split(delimiter);
+
+                                var email = userAuthenticated.Email;   
+                                
+                                <a href="/customer" class="logado">
+                                    <i class="user icon regular"></i>
+                                     <span class="text">Ol?,<br>@nickName[0] =)<i class="ui icon chevron right "></i></span>
+                                </a>
+                                <div class="menu">
+                                    @* <a href="/customer" class="item" title="Minha Conta"><i class="options icon"></i> </a> *@
+                                    <a href="/order" class="item" title="Meus Pedidos"><i class="shopping bag icon"></i>Meus Pedidos</a>
+                                    <a href="/customer/logout" class="item" title="Sair"><i class="sign out icon"></i>Sair</a>
+                                </div>
+
+                                <script>
+                                    
+                                    $(document).ready(function(){
+                                        
+                                        var customerID = '@email'; // define o ID do cliente 
+                                            (function() {     
+                                                var period = 300;     
+                                                var limit = 20 * 1e3;     
+                                                var nTry = 0;     
+                                                var intervalID = setInterval(function() { // loop para retentar o envio         
+                                                    var clear = limit/period <= ++nTry;         
+                                                    if ((typeof(Konduto) !== "undefined") &&
+                                                        (typeof(Konduto.setCustomerID) !== "undefined")) {            
+                                                    window.Konduto.setCustomerID(customerID); // envia o ID para a Konduto             
+                                                    clear = true;         
+                                                }         
+                                                if (clear) {
+                                            clearInterval(intervalID); 
+                                            }     
+                                            }, period);
+                                        })(customerID);
+
+                                    });
+
+                                </script>
+
+                            }
+                        </div>
+                        
+                        <div class="item whats DesktopOnly">
+                            <a href="#"  target="_blank">
+                                <i class="icon regular"></i> 
+                                 <span>Atendimento<br><b>Whatsapp</b></span>                                  
+                            </a>                                                        
+                        </div>
+
+                        <div class="item cart ">
+                            <div id="cartButton" class="ui labeled button cartbutton @_classMiniCart" tabindex="0" data-segment="@(Session["segment"] != null ? Session["segment"] : "b2c")">
+                               
+                                <div class="ui button">
+                                    <div class="textCart">
+                                        <span>Carrinho</span>
+                                        <div id="valorCart">R$0,00</div>
+                                    </div>
+                                    <i class="cart icon"></i>
+                                    @* <span>@(Session["idEventList"] == null && Session["EventList"] == null ? "Meu Carrinho" : "Minha Lista")</span> *@
+                                </div>
+                               
+                                <a class="ui left primary label" id="total_itens_card"></a>
+                            </div>
+                        </div>
+
+                 
+                      
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ui searchMobile mobilyHide">
+    <div class="ui blocoBusca @_classSearch">
+        <div class="ui input fluid blocoBuscaContainer">   
+             <i class="search icon search-results"></i>             
+            <input class="prompt" type="text" placeholder="procura...">  
+           
+        </div>
+        <div class="results"></div>
+    </div>
+</div>    

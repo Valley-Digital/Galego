@@ -1,0 +1,50 @@
+﻿@model IList<DomainCompany.Entities.Banner>
+ 
+@if (Model != null && Model.Any())
+{
+
+    List<DomainCompany.Entities.Banner> bannerRandom = Model.Where(b => b.Random == true).ToList();
+    List<DomainCompany.Entities.Banner> bannerNoRandom = Model.Where(b => b.Random == false).ToList();
+
+    if (bannerRandom.Any())
+    {
+ 
+     
+            <div class="ui fluid container centralHalf  hide mobile">    
+           
+               <div class="ui container ">
+                    <div class="ui images middle aligned center aligned">        
+                        @foreach (var banner in bannerRandom)
+                        {
+                            <div class="column">
+                                <a href="@banner.Link" class="ui image margin none" title="@banner.Name">
+                                    <img src="/assets/image/loading.svg" data-src="@banner.NameFileImage" class="ui image margin none" alt="@banner.Name" title="@banner.Name" onerror="imgError(this)" />
+                                </a>
+                            </div>
+                        }
+                   
+                </div>
+               </div>
+            </div>
+   
+    }
+
+
+    if (bannerNoRandom.Any() )
+    {
+        <div class="ui fluid container centralHalf slideshow mobile only" data-qtd="1" data-auto="true" data-arrow="false" data-dots="true">
+           @foreach (var banner in bannerNoRandom)
+                {
+                    <div class="container slideshow-item">
+                       <div class="image">
+                            <a href="@banner.Link" class="ui image margin none" title="@banner.Name">
+                            <img src="/assets/image/loading.svg" data-src="@banner.NameFileImage" class="ui image margin none" alt="@banner.Name" title="@banner.Name" onerror="imgError(this)" />
+                        </a>
+                       </div>
+                    </div>
+                }
+        </div>
+    }
+
+}
+

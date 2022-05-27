@@ -1,0 +1,197 @@
+.car-marcas {
+    .slick-slide {
+        margin: 0px 10px;
+    }
+}
+.thumbnails{
+    .slick-slide{
+        margin: 0px 10px;
+    }
+}
+
+.insta_feed {
+  .slick-list {
+    padding: 0;
+    .slick-slide {
+      margin: 0px 10px;
+    }
+  }
+}
+
+.slideshow.cards {
+    .slick-slide {
+        margin: .875em 1em !important;
+    }
+}
+
+.slick-slider {
+
+  &.centralized {
+    .slick-track {
+      display: flex !important;
+      align-items: center !important;
+    }
+  }
+
+  // &:not(.slick-dotted) {
+  //   margin-bottom: 40px !important;
+  // }
+
+  .slick-prev {
+    left: 25px;
+  }
+
+  .slick-prev[dir="rtl"] {
+    left: auto;
+    right: 25px;
+  }
+
+  .slick-next {
+    right: 25px;
+  }
+
+  .slick-next[dir="rtl"] {
+    left: 25px;
+    right: auto;
+  }
+
+  .slick-prev, .slick-next {
+    @media screen and(max-width: $mobile-bp) {
+      display: none;
+    }
+
+    opacity: 0.5;
+    transition: 0.3s;
+    z-index: 9;
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    z-index: 9;
+    bottom: -30px;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      outline: none;
+    }
+  }
+
+  .slick-prev {
+    left: calc(100% - 90px);
+  }
+
+  .slick-next {
+    right: 20px;
+  }
+
+  a {
+    outline: none;
+  }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    @media screen and (max-width: $mobile-bp) {
+        position: relative;
+        bottom: 0;
+    }
+
+    li{
+		  margin: 0 3px;
+      display: inline-block;
+		  background: $primary-color;
+		  width: 7px;
+		  height: 7px;
+		  border-radius: 100%;
+		  opacity: 1;
+		  -webkit-transition: .4s ease-in-out;
+		  transition: .4s ease-in-out;
+		  &.slick-active{
+			border-radius: 10px;
+			width: 27px;
+	
+			button{
+			  &::before{
+				opacity: 0;
+			  }
+			}
+		  }
+	
+		  button{
+			border: 0;
+			background: transparent;
+			display: block;
+			outline: none;
+			line-height: 0;
+			font-size: 0;
+			color: transparent;
+			padding: 5px;
+			&::before{
+			  opacity: 0;
+			}
+		  }
+		}
+}
+
+.slick-arrow {
+  background: transparent !important;
+  box-shadow: none !important;
+  // font-size: 16px;
+  // font-weight: 100;
+  // color: $primary-color !important;
+  bottom: auto;
+  top: 45%;
+  opacity: 1;
+  width: 30px;
+  height: 30px;
+  // border-radius: 100%;
+  
+  @media screen and (max-width: $mobile-bp){
+    top: 30%;
+  }
+  
+  
+  &.slick-prev {
+    @media screen and (max-width: 330px){
+      left: -13px !important;
+    }
+    left: -15px;
+    @media screen and (min-width: 1300px) and (max-width: 1360px){
+      left: 0;
+    }
+   
+  }
+  &.slick-next {
+    @media screen and (max-width: 330px){
+      right: -13px !important;
+    }
+    right: -15px;
+    @media screen and (min-width: 1300px) and (max-width: 1360px){
+      right: 0;
+    }
+    
+  }
+  }
+  // == Tratativa para evitar quebra do carrossel no Edge
+  .container-product-cards {
+  .slick-slide {
+    padding: 3px !important;
+    @media screen and (min-width: 1300px){
+      padding: 12px !important;
+    }
+  }
+  }

@@ -1,0 +1,42 @@
+﻿@model IList<DomainProduct.Entities.Group>
+
+@if (Model != null && Model.Count() > 0)
+{
+
+    int count = 0;
+    int exibe = 0;
+    
+    <div class="ui container topsellers ">
+            @foreach (var group in Model)
+            {
+                
+                <div class="ui titulo">
+                    <a href="@group.UrlFriendly" title="@group.Name"><h3 >@group.Name</h3></a>
+                </div>
+                @Html.Action("ProductsByGroup", "Product", new { id = group.IdGroup })
+
+                if (count == 0)
+                {
+                    exibe = 1;
+                    
+                    <!-- ~/Views/Shared/Blocks/_CentralHalfBanner.cshtml -->
+    @Html.Action("CentralHalfBanner", "Banner")
+
+                }
+
+                count++;
+            } 
+    </div>
+    
+    
+    if (exibe == 0)
+    {
+           <!-- ~/Views/Shared/Blocks/_CentralHalfBanner.cshtml -->
+    @Html.Action("CentralHalfBanner", "Banner")
+
+    }
+   
+    
+}
+
+

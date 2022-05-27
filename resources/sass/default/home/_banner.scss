@@ -1,0 +1,102 @@
+.car-banners {	
+	.container {
+		position:relative;
+		.description {
+			width: 30%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			background: rgba(255,255,255,.5);
+			display: flex;
+
+			.html {
+				flex-direction: column;
+				vertical-align: middle;
+				align-self: center !important;
+				width:100%;
+				text-align: center;
+			}
+		}
+	}	
+	> .slideshow-item:not(:first-child){
+		display: none;
+	}
+	.slick-dots{
+		@media screen and (min-width: 768px) and (max-width: 1200px){
+		  bottom: -23px;
+		}
+		@media screen and (max-width: $mobile-bp){
+		  bottom: 18px;
+		}
+		li{
+		  margin: 0 3px;
+		  background: $primary-color;
+		  width: 7px;
+		  height: 7px;
+		  border-radius: 100%;
+		  opacity: 1;
+		  -webkit-transition: .4s ease-in-out;
+		  transition: .4s ease-in-out;
+		  &.slick-active{
+			border-radius: 10px;
+			width: 27px;
+	
+			button{
+			  &::before{
+				opacity: 0;
+			  }
+			}
+		  }
+	
+		  button{
+			border: 0;
+			background: transparent;
+			display: block;
+			outline: none;
+			line-height: 0;
+			font-size: 0;
+			color: transparent;
+			padding: 5px;
+			&::before{
+			  opacity: 0;
+			}
+		  }
+		}
+	  }
+	  
+	// .image{
+	// 	margin: 0 !important;
+	// }  
+	&.hover{
+		opacity: 0.9;
+		background: rgba(0, 0, 0, 0.37);
+		filter: brightness(0.6);
+	}
+	@media screen and (max-width: $mobile-bp){
+		
+		.container img{
+			margin: 0 !important;
+		}
+	}
+}
+.ui.container.side-halfbanner{
+	max-width: 900px !important;
+	padding: 38px 0px 25px 0;
+}
+.centralHalf{
+	.ui.images.middle.aligned.center.aligned{
+		display: inline-block;
+
+		.column{
+			display: inline-block;
+			padding: 4px;
+		}
+	}
+}
+.ui.images {
+  img.side-halfbanner-image {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

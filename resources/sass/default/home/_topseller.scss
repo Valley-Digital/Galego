@@ -1,0 +1,67 @@
+.topsellers {
+	.titulo{
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 7px;
+    h3{
+      color: #000;
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 15px;
+      @media screen and (max-width: $mobile-bp){
+        font-size: 19px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+  .slick-dots{
+		@media screen and (min-width: 768px) and (max-width: 1200px){
+		  bottom: -23px;
+		}
+		@media screen and (max-width: $mobile-bp){
+		  bottom: -4px;
+		}
+		li{
+		  margin: 0 3px;
+		  background: $primary-color;
+		  width: 7px;
+		  height: 7px;
+		  border-radius: 100%;
+		  opacity: 1;
+		  -webkit-transition: .4s ease-in-out;
+		  transition: .4s ease-in-out;
+		  &.slick-active{
+			border-radius: 10px;
+			width: 27px;
+	
+			button{
+			  &::before{
+				opacity: 0;
+			  }
+			}
+		  }
+	
+		  button{
+			border: 0;
+			background: transparent;
+			display: block;
+			outline: none;
+			line-height: 0;
+			font-size: 0;
+			color: transparent;
+			padding: 5px;
+			&::before{
+			  opacity: 0;
+			}
+		  }
+		}
+	  }	 
+}
+
+.ui.container.topsellers{
+  @media screen and (max-width: 767px){
+    .column{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

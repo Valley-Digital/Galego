@@ -1,0 +1,480 @@
+.newsletter-bar {
+	padding-bottom: 10px;
+	background: #333;
+	position: relative;
+
+	i.envelope {
+		float: left;
+		margin-right: 5px;
+		font-size: 3em;
+		color: #fff;
+		line-height: 40px;
+	}
+
+	h4.header {
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border-right: 1px solid lighten($secondary-color, 30);
+		padding-right: 15px;
+		margin: 0;
+		float: left;
+		line-height: 40px;
+
+		@media screen and (max-width: $mobile-bp) {
+			border:0;
+			padding-right: 0;
+		}
+	}
+
+	span.text {
+		color: #999;
+		font-size: 12px;
+	}
+
+
+	.inline.fields {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+
+		.field {
+			@media screen and (max-width: $mobile-bp) {
+				padding-right: 0 !important;
+			}
+		}
+
+	}
+
+
+	.inline {
+		>.icon.input {
+			@media screen and (max-width: $mobile-bp) {
+				display:table;
+			}
+		}
+
+		.textNews {
+			@media screen and (min-width: $tablet-bp-min) and (max-width: $tablet-bp-max) {
+				max-width: 180px;
+
+			}
+
+			@media screen and (max-width: $mobile-bp) {
+				margin: 10px auto !important;
+				padding:0 !important;
+			}
+		}
+
+		#email_news {
+			background: #fff;
+			font-size: 12px;
+			color: #666666;
+
+
+			@media screen and (max-width: $mobile-bp) {
+				max-width: 200px;
+
+			}
+
+
+		}
+
+		i.mail.icon {
+			color: $secondary-color;
+			opacity: 1 !important;
+
+			@media screen and (max-width: $mobile-bp) {
+				top: 16px;
+				height:initial;
+			}
+		}
+
+		#btn_news {
+			margin-left: 5px;
+			color: #ffffff;
+			text-transform: uppercase;
+			background: lighten($secondary-color , 20);
+			font-size: 13px;
+
+			@media screen and (max-width: $mobile-bp) {
+				width: 100%;
+				margin:0 auto;
+			}
+		}
+
+
+	}
+
+}
+
+.footer-wrap{
+	position: absolute;
+	bottom: 0px;
+}
+
+.footer {
+    background-color: #fff !important;
+    // padding-bottom: 20px !important;
+	border-bottom: none !important;
+    > .ui.container {
+        > .ui.grid {
+            > .column {
+                padding-bottom: 0 !important;
+
+				@media screen and (max-width: 1055px){
+					width: 100% !important;
+					margin: auto;
+					text-align: center;
+				}
+
+
+				&.abouts{
+					img{
+						margin: auto auto 32px;
+						@media screen and (max-width: 1055px){
+							margin: auto !important;
+						}
+					
+					}
+					span{
+						color: #616161;
+						font-size: 16px;
+						font-weight: 400;
+						@media screen and (max-width: 1055px){
+						 display: none;
+						}
+		
+					}
+				}
+				&.pagamentos{
+
+				}
+				&.institucional{
+
+				}
+				&.conta{
+
+				}
+
+				&.newsletter{
+					@media screen and (max-width: 1055px){
+						.ui.form{
+							.field{
+								margin: auto;
+								.ui.left.icon.input{
+									display: block;
+								}
+							}
+						}
+					}
+				
+					#email_news{
+						border: 1px solid #5b5b5b;
+						width: 284px;
+						height: 49px;
+						border-radius: 5px;
+						padding-left: 12px !important;
+						margin-bottom: 15px;
+						@media screen and (max-width: 1055px){
+							width: 300px;
+							margin: auto;
+							margin-bottom: 15px !important;
+						}
+					}
+					#btn_news{
+						background: $primary-color;
+						color: #fff;
+						font-size: 14px;
+						font-weight: 400;
+						padding: 8px;
+						height: 38px;
+						position: relative;
+						left: -59px;
+						top: 5px;
+						@media screen and (max-width: 1055px){
+							display: block;
+							width: 100%;
+							max-width: 174px;
+							position: initial;
+							margin: auto;
+							margin-bottom: 20px;
+						}
+					}
+				}
+            }
+        }
+    }
+
+    .listMobile {
+        .column {
+          padding-left: 0 !important;
+        }
+    }
+
+    .header {
+        text-transform: uppercase;
+        font-size: 18px !important;
+        margin: 0;
+		color: #5b5b5b !important;
+		font-weight: 500 !important;
+		margin-bottom: 18px;
+		@media screen and (max-width: 1055px){
+			width: 100% ;
+		}
+        @media screen and (max-width: $mobile-bp) {
+            line-height: 30px;
+        }
+
+        i.icon:only-child {
+            display: none !important;
+            float: right !important;
+            font-size: 1em;
+        }
+    }
+
+
+    socialbar {
+        margin-top: 10px;
+        display: inline-block;
+
+        a {
+            i.icon {
+                font-size: 1.7em;
+                line-height: 0.95em;
+            }
+        }
+    }
+
+    .list {
+        &.link {
+			margin-top: 0;
+			a.area{
+				background: $primary-color;
+				color: #fff !important;
+				max-width: 189px;
+				padding: 10px;
+				text-align: center;
+				border-radius: 10px;
+				@media screen and (max-width: 1055px){
+					margin: auto;
+				}
+
+			}
+            a,
+            h5 {
+                color: #5b5b5b !important;
+                font-size: 16px;
+                font-weight: 400;
+                margin: 0;
+                line-height: 20px;
+
+                &:hover,
+                &:focus,
+                &:checked,
+                &:active {
+                    font-weight: bold;
+                }
+            }
+
+            @media screen and (max-width: $mobile-bp) {
+                padding: 0 1em;
+                // text-align: left !important;
+                margin: 0;
+                // display: none;
+                // background: lighten($secondary-color, 5);
+            }
+        }
+
+        &.selos {
+            margin-top: 10px;
+            // margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (min-width: 1056px) {
+                justify-content: flex-start;
+            }
+
+            a {
+                margin: 5px;
+                &#seloEconfy {
+                    position: relative !important;
+                }
+            }
+        }
+
+
+
+        &.selos a img {
+            max-height: 100px;
+            display: inline-block;
+            background-size: cover;
+			max-width: 100px;
+        }
+    }
+
+    p {
+        color: #999999;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    h4,
+    h5 {
+        font-weight: bold;
+        font-size: 16px;
+        color: $white;
+    }
+
+    .tireDuvidas {
+        background: #fff;
+
+        h5 {
+            color: $black;
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+
+    .ui.form {
+
+
+        > .inline {
+            > .icon.input {
+                @media screen and (max-width: $mobile-bp) {
+                    display: table;
+                }
+
+                .mail {
+                    color: $black;
+                    opacity: 1 !important;
+
+                    @media screen and (max-width: $mobile-bp) {
+                        top: 22px;
+                        height: initial;
+                    }
+                }
+
+                #email_news {
+                    @media screen and (max-width: $mobile-bp) {
+                        width: 100%;
+                    }
+                }
+
+                #btn_news {
+                    margin-left: 5px;
+                    color: #000;
+                    text-transform: uppercase;
+                    background: #fff;
+
+                    @media screen and (max-width: $mobile-bp) {
+                        width: 100%;
+                        margin: 5px auto 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subFooter {
+	background-color: #fff;
+	text-align: center;
+
+	.ui.grid > .row{
+		padding: 0;
+	}
+	.menu_subfooter {
+		margin-bottom: 1em;
+
+		a.submenu {
+			padding: .42857143em 0.84285714em;
+			color: white;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.textoEmpresa {
+		text-align: center;
+
+		>h6 {
+			color:#5b5b5b;
+			font-size:12px;
+			font-weight: normal;
+			margin:0 ;
+			display: block;
+		}
+		> address {
+			color:#5b5b5b;
+			font-size:12px;
+			font-weight: normal;
+			font-style: normal;
+			display: block;
+		}
+	}
+
+	.ui.tiny.images {
+		@media screen and (max-width: $mobile-bp) {
+			text-align: center;
+		}
+	}
+
+
+}
+
+.designBy{
+	background: $primary-color;
+	text-align: center;
+
+	span{
+		color: #fff;
+	}
+
+	svg#valleylogo{
+		width: 60px;
+	}
+	#jetLogo{
+		width: 45px;
+	}
+}
+.jetBrand{
+	height: 35px;
+	text-align: center;
+	padding: 0px !important;
+	background: black !important;
+
+	img{
+		height: 25px;
+		margin:5px;
+	}
+}
+#seloEbit{
+	display: inline-block !important;
+	width:84px;
+	@media screen and (max-width: $mobile-bp) {
+		float:none;
+		margin: 0;
+		width: auto;
+	}
+
+}
+#jetLogo {
+	height: 57px;
+
+	.st0 {
+		fill: rgba(255, 255, 255, 1);
+
+	}
+
+	.st1 {
+		fill: rgba(255,0, 0, 1);
+	}
+}

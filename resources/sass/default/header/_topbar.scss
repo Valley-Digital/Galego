@@ -1,0 +1,41 @@
+.topbar {
+  background:  $primary-color;
+    padding: 5px 0 !important;
+    .ui.container{
+      @media screen and (max-width: 1200px){
+        width: 100%;
+      }
+    }
+  .slideTopbar{
+    .slick-list.draggable{
+      width: 100%;
+    }
+       .column{
+          padding: 0 !important;
+          position: relative;
+          @media screen and (max-width: 1200px){
+            text-align: center;
+          }
+          @media screen and (max-width: $mobile-bp){
+            padding: 5px 0 ;
+          }
+          @media screen and (min-width: 1300px){
+            &.second{
+                left: 81px;
+            }
+            &.three{
+                left: 101px;
+            }
+            &.four{
+                left: 157px;
+            }
+          }
+
+          span{
+              text-transform: uppercase;
+              color: #fff;
+              font-size: 13px;
+          }
+      }
+  }
+}

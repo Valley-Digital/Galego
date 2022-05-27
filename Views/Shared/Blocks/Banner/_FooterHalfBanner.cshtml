@@ -1,0 +1,50 @@
+﻿@model IList<DomainCompany.Entities.Banner>
+@if (Model != null && Model.Any())
+{
+
+    List<DomainCompany.Entities.Banner> bannerRandom = Model.Where(b => b.Random == true).ToList();
+    List<DomainCompany.Entities.Banner> bannerNoRandom = Model.Where(b => b.Random == false).ToList();
+
+    if (bannerRandom.Any())
+    {
+        <div class="ui container footerHalf hide mobile">
+            <div class="ui equal width grid middle aligned center aligned stackable">
+                  @foreach (var randombanner in bannerRandom)
+                {
+                    <div class="column slideshow-item">
+                        <a href="@randombanner.Link" title="@randombanner.Name" class="ui">
+                            <img src="/assets/image/img_default.png" data-src="@randombanner.NameFileImage" class="ui image centered" alt="@randombanner.Name" title="@randombanner.Name" onerror="imgError(this)" />
+                        </a>
+
+                    @if (System.Text.RegularExpressions.Regex.Replace(randombanner.Description.Trim(), "<.*?>|&nbsp;", String.Empty).Trim() != "")
+                    {
+                        <div class="description">
+                            <div class="html">@Html.Raw(randombanner.Description)</div>
+                        </div>
+                    }
+                    </div>
+                  
+                }
+            </div>
+        </div>
+    
+    }
+
+    if (bannerNoRandom.Any())
+    {
+        <div class="ui container footerHalf  mobile only" >
+             <div class="ui equal width grid images middle aligned center aligned stackable">
+             @foreach (var banner in bannerNoRandom)
+                {
+                    <div class="column slideshow-item">
+                         <a href="@banner.Link" class="ui" title="@banner.Name">
+                                <img src="/assets/image/loading.svg" data-src="@banner.NameFileImage" class="ui image" alt="@banner.Name" title="@banner.Name" onerror="imgError(this)" />
+                            </a>
+                    </div>
+                  }
+             </div>
+
+        </div>
+    }
+
+}
