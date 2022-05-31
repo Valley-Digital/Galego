@@ -19,3 +19,13 @@
 .img-selecionado > img{
   border:3px rgba(0, 0, 0, .35) solid !important;
 }
+
+.ui.container.side-halfbanner{
+  @media screen and (max-width: $mobile-bp) {
+    .ui.image{
+      max-width: 93% !important;
+    }
+    
+  }
+
+}

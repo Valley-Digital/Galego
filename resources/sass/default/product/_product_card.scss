@@ -40,6 +40,13 @@
                     text-align: left;
                     text-transform: capitalize;
                     min-height: 36px;
+                    span{
+                    max-width: 30ch;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-transform: uppercase;
+                    }
                 }
 
                 .precoBase {
