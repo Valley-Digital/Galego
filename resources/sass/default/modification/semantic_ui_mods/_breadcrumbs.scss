@@ -356,6 +356,13 @@ button#viewlist{
         color: transparent;
         font-size: 36px;
      }
+     &::after{
+         
+        background: url(/assets/image/icons/list.svg) center no-repeat !important;
+        background-size: contain !important;
+        color: $primary-color;
+        font-size: 36px;
+     }
  }
 }
 .ui.dropdown.button.basic.dropdownitens.small {

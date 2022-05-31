@@ -184,6 +184,7 @@ ui.dropdown {
             // background-color: #B38E46 !important;
             background: url(/assets/image/icons/select.svg) center no-repeat;
             background-size: 10px;
+           
         }
       }
 
@@ -263,18 +264,23 @@ button.ui.labeled.icon.button.primary.fluid.pricefilter.text.uppercase {
       font-weight: 700 !important;
       /* padding: 1em; */
       font-size: 14px;
-      background: #76CFD7;
-      color: #00464D;
+      background: $primary-color;
+      color: #fff;
       padding-left: 15px;
 
-       i.content.icon {
-        margin-right: 14px;
-        color: transparent;
+       i.content.icon{
+        margin-right: 8px;
+        color: #fff;
         background: url(/assets/image/icons/arrow.svg) no-repeat center;
         background-size: contain;
         position: relative;
-        top: 16px;
-    }
+        float: left;
+        top: 15px;
+        // top: 16px;
+      }
+      i.content.icon::before{
+        color: transparent;
+      }
     }
   }
 
@@ -344,6 +350,9 @@ button.ui.labeled.icon.button.primary.fluid.pricefilter.text.uppercase {
 }
 .ui.two.column.centered.grid.stackable.middle.aligned.margin.top.bottom.no.breadcrumbs > .row {
   padding: 0;
+  .ui.container{
+    width: 100% !important;
+  }
 }
 button.ui.mobile.only.left.floated.icon.button.basic.filterbutton.right.labeled.small {
     font-size: 12px !important;

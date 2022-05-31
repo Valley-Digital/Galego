@@ -10,6 +10,8 @@ headlogo {
 .ui.container.fluid._header.sticky {
   width: 100% !important;
   z-index: 999 !important;
+  box-shadow: 0 1px 10px #0000001a !important;
+  
 }
 ._header {
   height: 50px;
@@ -1011,6 +1013,8 @@ headlogo {
         left: 30px;
         @media screen and (min-width: 760px){
           padding-left: 10px;
+          width: 140px;
+          top: -5px;
         }
       }
 

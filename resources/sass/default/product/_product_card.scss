@@ -158,6 +158,9 @@
                     opacity: 1;
                     position: relative;
                 }
+                @media screen and (max-width: $tablet-bp-max) {
+                    opacity: 1;
+                }
                 .ui.button.action.btnComprar{
                     padding-left: 0 !important;
                     padding-right: 0 !important;
@@ -169,7 +172,7 @@
                     font-weight: 500;
                     line-height: 17px;
                     display: none;
-                    @media screen and (max-width: 420px){
+                    @media screen and (max-width: $tablet-bp-max){
                         display: block;
                     }
                     i{
@@ -228,6 +231,9 @@
                 bottom: -146px;
                 position: absolute;
                 opacity: 1 !important;
+                @media screen and (max-width: $tablet-bp-max) {
+                    display: none;
+                }
                 @media screen and (max-width: 1055px){
                     bottom: -40px;
                 }
