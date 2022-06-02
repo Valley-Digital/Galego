@@ -27,6 +27,20 @@ $colorLinkSubMenu: "#666";
       display: flex;
     }
     li {
+
+      &.more{
+        display: none;
+        @media screen and (min-width: 1281px) {
+          display: block;
+        }
+      }
+
+      &.seeMore{
+        @media screen and (min-width: 1280px){
+          display: none;
+        }
+      }
+
       @media screen and (max-width: 1055px){
         &:first-child{
           border-top: 1px solid #fff !important;
@@ -35,24 +49,27 @@ $colorLinkSubMenu: "#666";
       @media screen and (min-width: 1055px) {
 
         &.seeMore {
-          line-height: 49px;
+          line-height: 40px;
           // text-transform: uppercas;
           // font-weight: 700;
           // color: #1F5985 ;       
-          font-size: 14px;
+          font-size: 15px;
           // background: #fff;
-          padding: 0px 10px;
+          padding: 0px 12px;
           // border-top-left-radius: 6px;
           // border-top-right-radius: 6px;
           cursor: pointer;
           transition: all .3s;
-          font-family: 'Noto Sans', sans-serif;
+          font-family: 'Roboto', sans-serif;
+          color: #80B11A;
+          text-transform: uppercase;
+          font-weight: 400;
 
-          .allCategory{
+          i.allCategory{
             display: inline-block;
             width: 24px;
             height: 24px;
-            background: url(/assets/image/icons/menu.svg) no-repeat center !important;
+            background: url(/assets/image/icons/menuAll.svg) no-repeat center !important;
             background-size: contain;
             position: relative;
             top: 7px;

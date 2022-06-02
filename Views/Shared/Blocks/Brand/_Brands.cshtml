@@ -3,27 +3,29 @@
 @if (Model != null && Model.Count() > 0)
 {
 <div class="ui container brands">
-  <div class="ui horizontal divider">
+  @* <div class="ui horizontal divider">
     MARCAS
-  </div>
-  <div class="ui grid">
+  </div> *@
+  @* <div class="ui grid">
     <div class="row one column">
       <div class="column">
-        <div class="ui equal width grid images middle aligned center aligned stackable slideshow" data-qtd="6">
+        <div class="ui equal width grid images middle aligned center aligned stackable slideshow" data-qtd="7"> *@
               <div class="slideMarcas">
                 @foreach (var brand in Model)
                 {
-                  <div class="column slideshow-item">
+                  <div class="container">
+                  <div class="image">
                     <a href="@brand.UrlFriendly" title="@brand.Name">
                       <img class="ui image centered brands" src="@brand.Logo" alt="@brand.Name" title="@brand.Name" onerror="imgError(this)">
                     </a>
                   </div>
+                  </div>
                 }
               </div>    
-        </div>
+        @* </div>
       </div>
     </div>
-  </div>
-  <div class="ui divider hidden"></div>
+  </div> *@
+  @* <div class="ui divider hidden"></div> *@
 </div>
 }

@@ -102,13 +102,27 @@
 }
 
 .ui.container.brands{
-	max-width: 1000px !important;
+	max-width: 900px !important;
+	margin-top: 2em;
+	text-align: center;
 
-	// .slick-slide{
-	// 	width: 164px !important;
+	.container{
+		display: inline-block;
+		.image{
+			display: inline-block;
+		}
+	}
 
-	// 	@media screen and (max-width: $mobile-bp) {
-	// 		width: 152px !important;
-	// 	}
-	// }
+	button.slick-prev.slick-arrow{
+		display: none !important;
+	}
+	button.slick-next.slick-arrow{
+		display: none !important;
+	}
+
+	@media screen and (max-width: 1054px) {
+		.ui.container.brands{
+			padding-left: 3em;
+		}
+	}
 }

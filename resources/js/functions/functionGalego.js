@@ -28,15 +28,15 @@ $(document).ready(function () {
 
     
 
-    // var getWidth = screen.width
-    // if (getWidth > 1055 ) {
-    //     console.log('sim')
-    //     $('.wsmenu-list>li:gt(2)').addClass('more');
-    //     $('.wsmenu-list>li:first-child()').before('<li class="seeMore"><i class="allCategory"></i>Categorias<ul></ul></li>');
-    //     $('.wsmenu-list > li').clone().appendTo('li.seeMore ul');
-    // } else {
-    //    console.log('nao')
-    // };
+    var getWidth = screen.width
+    if (getWidth > 1055 ) {
+        console.log('sim')
+        $('.wsmenu-list>li:gt(2)').addClass('more');
+        $('.wsmenu-list>li:first-child()').before('<li class="seeMore"><i class="allCategory"></i>Categorias<ul></ul></li>');
+        $('.wsmenu-list > li').clone().appendTo('li.seeMore ul');
+    } else {
+       console.log('nao')
+    };
 
      // paginas institucionais
         $('.container.institucional .content-institucional-mobile li.li-abouts.active').click(function () {
@@ -244,6 +244,39 @@ $(document).ready(function () {
             }
           ]
     });
+
+    $('.slideMarcas').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 7,
+        responsive: [            
+            {
+                breakpoint: 1055,
+                settings: {
+                slidesToShow: 5,
+                autoplay: false,
+                dots: false,
+                }
+            },   
+            {
+                breakpoint: 767,
+                settings: {
+                slidesToShow: 3,
+                autoplay: false,
+                dots: false,
+                }
+            },         
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    autoplay: false,
+                    dots: false,
+                }
+            }
+          ]
+    });
     
     $('.slideshowCentral').slick({
         dots: false,
@@ -285,4 +318,28 @@ $(document).ready(function () {
             }
           ]
     });
+
+
+    //botao
+
+// let myButtonGrid = document.querySelectorAll('.columnn.btn > button#viewgrid > i');
+
+
+// myButtonGrid.forEach(function(key){
+//     key.addEventListener('click', function(){
+//         removeStylesGrid();
+//         this.setAttribute('class', 'buttonClickedGrid');
+//     });
+// })
+
+
+
+
+// function removeStylesGrid(){
+//     for(let i = 0;i < myButtonGrid.length;i++){
+//         document.querySelectorAll('.columnn.btn > button#viewgrid')[i].removeAttribute('class');
+//     }
+// }
+
 });
+

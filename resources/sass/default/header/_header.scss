@@ -13,6 +13,9 @@ headlogo {
   box-shadow: 0 1px 10px #0000001a !important;
   
 }
+.ui.container.fluid._header{
+   box-shadow: 0 1px 10px #0000001a !important;
+}
 ._header {
   height: 50px;
   @media screen and (min-width: 1055px){
@@ -130,6 +133,11 @@ headlogo {
         top: 8px;   
       }
       
+
+      
+          
+      
+      
       @media screen and (max-width: 1340px) and (min-width: 1285px){
         right: -23px;
       }
@@ -137,6 +145,11 @@ headlogo {
         max-width: 100px;
         top: 0px;
       }
+      @media screen and (min-width: 501) and (max-width: 759px){
+          width: 120px;
+          padding-left: 10px;
+          top: -3px;
+          }
     }
 
     .item.hamb{
@@ -981,7 +994,7 @@ headlogo {
     }
 
   } 
-
+  
   @media screen and (max-width: 1055px) {
     
     .logo-box {
@@ -994,6 +1007,8 @@ headlogo {
     // }
 
   }
+
+  
 
   @media screen and (max-width: 1055px) {
 
@@ -1011,11 +1026,13 @@ headlogo {
         // left: 16px;
         // top: 7px;
         left: 30px;
-        @media screen and (min-width: 760px){
+        @media screen and (min-width: 501px){
           padding-left: 10px;
           width: 140px;
           top: -5px;
         }
+
+        
       }
 
       a {

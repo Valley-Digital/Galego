@@ -17,7 +17,7 @@ button#viewgrid{
    
     i.grid.layout.icon {
       &::before{
-       background: url(/assets/image/icons/grid.svg) center no-repeat !important;
+    //    background: url(/assets/image/icons/grid.svg) center no-repeat !important;
        background-size: contain !important;
        color: transparent;
        font-size: 28px;
@@ -308,61 +308,84 @@ button#viewlist{
     }
 }
 
-.ui.grid.cardlist{
-    button#viewgrid{
-        box-shadow: none !important;
+// .ui.grid.cardlist{
+//     button#viewgrid{
+//         box-shadow: none !important;
        
-        i.grid.layout.icon {
-          &::before{
-           background: url(/assets/image/icons/grid1.svg) center no-repeat !important;
-           background-size: contain !important;
-           color: transparent;
-           font-size: 28px;
-          }
-       }
-       }
-       button#viewlist{
-        box-shadow: none;
-        i.list.layout.icon{
-            &::before{
-               background: url(/assets/image/icons/list1.svg) center no-repeat !important;
-               background-size: contain !important;
-               color: transparent;
-               font-size: 28px;
-            }
-        }
-       }
-}
+//         i.grid.layout.icon {
+//           &::before{
+//            background: url(/assets/image/icons/grid1.svg) center no-repeat !important;
+//            background-size: contain !important;
+//            color: transparent;
+//            font-size: 28px;
+//           }
+//        }
+//        }
+//        button#viewlist{
+//         box-shadow: none;
+//         i.list.layout.icon{
+//             &::before{
+//                background: url(/assets/image/icons/list1.svg) center no-repeat !important;
+//                background-size: contain !important;
+//                color: transparent;
+//                font-size: 28px;
+//             }
+//         }
+//        }
+// }
 button#viewgrid{
  box-shadow: none !important;
+ &:active,&:focus{
+     background-color: $primary-color !important;
+     padding-right: 21px;
+     margin-right: 0;
+     padding-top: 9px;
+     padding-bottom: 9px;
+     padding-left: 0;
+ }
 
  i.grid.layout.icon {
-   &::before{
-    background: url(/assets/image/icons/grid.svg) center no-repeat !important;
+    &::before{
+    background: #ffffff;
     background-size: contain !important;
-    color: transparent;
-    font-size: 36px;
-   }
+    color: #C4C4C4;
+    font-size: 24px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1px 5px;
+    
+    
+}
+//    &::before{
+//     background: url(/assets/image/icons/grid.svg) center no-repeat !important;
+//     background-size: contain !important;
+//     color: transparent;
+//     font-size: 36px;
+//    }
 }
 }
 button#viewlist{
  box-shadow: none;
  margin-right: 10px;
  padding-left: 0 !important;
+ &:active,&:focus{
+     background-color: $primary-color !important;
+     padding-right: 21px;
+     margin-right: 0;
+     padding-top: 9px;
+     padding-bottom: 9px;
+ }
+ 
  i.list.layout.icon{
      &::before{
         background: url(/assets/image/icons/list.svg) center no-repeat !important;
         background-size: contain !important;
         color: transparent;
         font-size: 36px;
+        
      }
-     &::after{
-         
-        background: url(/assets/image/icons/list.svg) center no-repeat !important;
-        background-size: contain !important;
-        color: $primary-color;
-        font-size: 36px;
-     }
+    
+     
  }
 }
 .ui.dropdown.button.basic.dropdownitens.small {
