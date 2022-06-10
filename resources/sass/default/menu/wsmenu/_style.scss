@@ -153,6 +153,7 @@
     padding: 0;
     text-align: left;
     width: 100%;
+    text-transform: uppercase;
 
     > li {
         display: block;
@@ -160,6 +161,7 @@
         margin: 0;
         padding: 0;
         text-align: center;
+        text-transform: uppercase;
 
         @media screen and (min-width: 1300px){
             &:nth-child(2){
@@ -565,13 +567,13 @@
             }
         }
         &.itemvertodos{
-            color: #aa8343 !important;
+            color: #000 !important;
             text-transform: uppercase;
             font-size: 14px;
             text-decoration: underline;
-            &:hover{
-                font-weight: 900;
-            }
+            // &:hover{
+            //     font-weight: 900;
+            // }
         }
     }
 }

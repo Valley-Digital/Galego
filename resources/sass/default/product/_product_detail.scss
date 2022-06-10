@@ -96,7 +96,7 @@ h6.codProduto {
     .marcaProduto {
         color: $primary-color;
         font-size: 13px;
-        font-weight: 400;
+        font-weight: 800;
         text-transform: capitalize;
     }
 
@@ -150,8 +150,8 @@ h6.codProduto {
         }
         #preco{
             color: #1C5681;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 20px;
+            font-weight: 600;
         }
         .ui.attached.segment{
             border: none;
@@ -593,6 +593,7 @@ h6.codProduto {
 
         .marcaProduto {
             margin: 0px !important;
+            padding: 2px 50px 0 0;
         }
 
         &.row {
@@ -935,6 +936,7 @@ a.at-icon-wrapper.at-share-btn.at-svc-compact {
             font-weight: 400;
             font-size: 14px;
             margin-right: 0 !important;
+            box-shadow: 0 0 0 1px #3e3e3e inset !important;
         }
     }
     
