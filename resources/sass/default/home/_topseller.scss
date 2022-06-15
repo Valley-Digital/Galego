@@ -22,6 +22,10 @@
 		@media screen and (max-width: $mobile-bp){
 		  bottom: -4px;
 		}
+
+		ul{
+			bottom: -15px !important;
+		}
 		li{
 		  margin: 0 3px;
 		  background: $primary-color;
